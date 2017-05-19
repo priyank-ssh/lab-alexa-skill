@@ -1,6 +1,7 @@
 { "intents": [
     { "intent": "LaunchRequest" },
     { "intent": "GetProtectiveGearIntent" },
+    { "intent": "ChemicalLookupIntent" },
     { "intent": "AMAZON.HelpIntent" },
     { "intent": "AMAZON.StopIntent" },
     { "intent": "AMAZON.CancelIntent" }
