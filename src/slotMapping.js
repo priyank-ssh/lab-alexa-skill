@@ -21,13 +21,17 @@ exports.bodyToKey = {
 
 exports.bodyToExposeKey = {
     'eye': 'eye',
+    'eyes': 'eye',
     'eye balls': 'eye',
     'skin': 'skin',
     'nose': 'skin',
+    'hand': 'skin',
     'hands': 'skin',
     'foot': 'skin',
+    'feet': 'skin',
     'body': 'skin',
     'arms': 'skin',
+    'leg': 'skin',
     'legs': 'skin',
     'mouth': 'mouth',
     'ingest': 'mouth',

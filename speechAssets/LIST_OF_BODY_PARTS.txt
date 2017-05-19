@@ -1,5 +1,7 @@
+eye
 eyes
 face
+hand
 hands
 body
 resp
@@ -8,7 +10,10 @@ nose
 eye balls
 skin
 foot
+feet
+arm
 arms
+leg
 legs
 mouth
 ingest
