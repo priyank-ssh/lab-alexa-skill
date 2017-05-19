@@ -33,7 +33,7 @@ const handlers = {
         const productName = this.event.request.intent.slots.productname.value;
         chemicalLookup("water", "boiling_point");
 
-        this.emit(':tell', 'chemical lookup to do');
+        this.emit(':tell', `property lookup intent. property name ${propertyName} and product name ${productName}`);
     },
     'ProtectiveGearLookupIntent': function () {
         const bodyPart = this.event.request.intent.slots.bodypart.value;
@@ -43,7 +43,7 @@ const handlers = {
         // var randomFact = factArr[factIndex];
         // var speechOutput = GET_FACT_MESSAGE + randomFact;
         // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
-        this.emit(':tell', 'protective gear lookup to do');
+        this.emit(':tell', `protective gear lookup intent. body part ${bodyPart} and product name ${productName}`);
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
