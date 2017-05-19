@@ -13,8 +13,14 @@ var request = require('request');
              singleProperty = jsonData[i];
             console.log(singleProperty)
          }*/
-       var str=jsonData[0][infoFor];
-       console.log(jsonData[0][infoFor]);
+         var str=jsonData[0][infoFor];
+         if(infoFor ==  'melting_point' || infoFor == 'boiling_point' ){
+             
+             str = str.replace(" C"," degree celcius");
+            // console.log(jsonData[0][infoFor]);
+            console.log(str);
+         }
+       
          return str;
        }
      })
