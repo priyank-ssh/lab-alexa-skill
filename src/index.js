@@ -1,9 +1,8 @@
 'use strict';
 const Alexa = require('alexa-sdk');
-// const propertyLookup = require('./propertyClient');
 const protectiveIntent = require('./protectiveIntent');
-// const slotMapping = require('./slotMapping');
-const proctectiveClient = require('./proctectiveClient');
+const slotMapping = require('./slotMapping');
+const protectiveClient = require('./protectiveClient');
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
@@ -28,7 +27,7 @@ exports.handler = function(event, context, callback) {
 
 const handlers = {
     'LaunchRequest': function () {
-        const speechOutput = "Welcome to Connected Labs";
+        const speechOutput = "Welcome to Connected Lab";
         const reprompt = speechOutput;
         this.emit(':ask', speechOutput, reprompt);
     },
@@ -52,7 +51,8 @@ const handlers = {
         // var randomFact = factArr[factIndex];
         // var speechOutput = GET_FACT_MESSAGE + randomFact;
         // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
-        this.emit(':tell', `protective gear lookup intent. body part ${bodyPart} and product name ${productName}`);
+		      this.emit(':tell', protectiveClient.getProtectiveInfo( productName , bodyPart));
+
     },
     'HazardLookupIntent': function () {
         const propertyName = this.event.request.intent.slots.propertyname.value;
