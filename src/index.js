@@ -1,5 +1,6 @@
 'use strict';
 const Alexa = require('alexa-sdk');
+const utils = require('./utils');
 const protectiveIntent = require('./protectiveIntent');
 const protocolIntent = require('./protocolIntent');
 const propertyIntent = require('./propertyIntent');
@@ -29,7 +30,7 @@ exports.handler = function(event, context, callback) {
 const handlers = {
     'LaunchRequest': function () {
         const speechOutput = "Welcome to Connected Lab";
-        const reprompt = speechOutput;
+        const reprompt = "hm";
         this.attributes['launch'] = "true";
         this.emit(':ask', speechOutput, reprompt);
     },
@@ -61,6 +62,32 @@ const handlers = {
             this.emit(respType, resp);
         });
 
+    },
+    'AddProductIntent': function () {
+        const productName = this.event.request.intent.slots.productname.value;
+        console.log(`Adding product name ${productName}`);
+        let products = this.attributes['products'] || [];
+
+        products.push(productName);
+        this.attributes['products'] = utils.unique(products);
+        this.emit(':ask', "Added. " + productName);
+    },
+    'RemoveProductIntent': function () {
+        const productName = this.event.request.intent.slots.productname.value;
+        console.log(`Removing product name ${productName}`);
+        let products = this.attributes['products'] || [];
+
+        this.attributes['products'] = utils.pop(products, productName);;
+        this.emit(':ask', "Removing. " + productName);
+    },
+    'ListProductIntent': function () {
+        console.log(`List Intent`);
+
+        if (!Object.keys(this.attributes).length) {
+            this.emit(':ask', "No products selected. Please sad add product.");
+        }
+
+        this.emit(':ask', "You have. " + productName.join(", "));
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
