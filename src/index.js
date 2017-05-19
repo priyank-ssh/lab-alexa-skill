@@ -2,7 +2,7 @@
 const Alexa = require('alexa-sdk');
 const propertyLookup = require('./propertyLookup');
 const protectiveIntent = require('./protectiveIntent');
-const slotMapping = require('./slotMapping');
+// const slotMapping = require('./slotMapping');
 const proctectiveClient = require('./proctectiveClient');
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
@@ -17,6 +17,24 @@ const HELP_REPROMPT = "What can I help you with?";
 const STOP_MESSAGE = "Thank you for being safe! Goodbye!";
 
 //=========================================================================================================================================
+<<<<<<< HEAD
+//TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
+//=========================================================================================================================================
+// TODO: @priyank
+const productNamesToProductIds = {
+  'cocaine hydrochloride': 'C5776',
+  'abeitic acid':'0010',
+  'sodium phosphate':'342483',
+  'trizma base': 'T1503',
+  'dichlorophene':'35992',
+ 'chloromethyl methyl sulfide':'C54007',
+ 'phenyl cyanate solution':'744417',
+ 'hydrogen bromide':'295418'
+};
+
+//=========================================================================================================================================
+=======
+>>>>>>> 11eb033fca42e930eb1fff6d71528725dab97bbf
 //Editing anything below this line might break your skill.
 //=========================================================================================================================================
 exports.handler = function(event, context, callback) {
@@ -40,7 +58,12 @@ const handlers = {
         this.emit(':tell', `property lookup intent. property name ${propertyName} and product name ${productName}`);
     },
     'ProtectiveGearLookupIntent': function () {
-        const bodyPart = this.event.request.intent.slots.bodypart.value;
+        const bodyPart= this.event.request.intent.slots.bodypart.value;
+        // var itemName;
+        // if (itemSlot && itemSlot.value) {
+        //     itemName = itemSlot.value.toLowerCase();
+        // }
+
         const productName = this.event.request.intent.slots.productname.value;
         // var factArr = data;
         // var factIndex = Math.floor(Math.random() * factArr.length);
