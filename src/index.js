@@ -30,22 +30,25 @@ const handlers = {
     'LaunchRequest': function () {
         const speechOutput = "Welcome to Connected Lab";
         const reprompt = speechOutput;
+        this.attributes['launch'] = "true";
         this.emit(':ask', speechOutput, reprompt);
     },
     'PropertyLookupIntent': function () {
         const propertyName = this.event.request.intent.slots.propertyname.value;
         const productName = this.event.request.intent.slots.productname.value;
+        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
 
         propertyIntent.getProductProperty(productName, propertyName, (err, resp) => {
-          this.emit(':tell', resp);
+          this.emit(respType, resp);
         });
     },
     'ProtectiveGearLookupIntent': function () {
         const bodyPart= this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
+        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
 
 	    protectiveIntent.getProtective(productName , bodyPart , (err, resp) => {
-          this.emit(':tell', resp);
+          this.emit(respType, resp);
             });
     },
     'HazardLookupIntent': function () {
@@ -53,8 +56,9 @@ const handlers = {
         const productName = this.event.request.intent.slots.productname.value;
         console.log(`hazard lookup intent. body part name ${bodypart} and product name ${productName}`);
 
+        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
         protocolIntent.getProtocol(productName, bodypart, (err, resp) => {
-            this.emit(':tell', resp);
+            this.emit(respType, resp);
         });
 
     },
