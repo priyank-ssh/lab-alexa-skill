@@ -23,7 +23,7 @@ module.exports = {
         },
         "propertyname": {
           "name": "propertyname",
-          "value": "melting point"
+          "value": "flash point"
         }
       }
     },
