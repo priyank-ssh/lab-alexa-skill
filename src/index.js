@@ -34,7 +34,7 @@ const handlers = {
     'PropertyLookupIntent': function () {
         const propertyName = this.event.request.intent.slots.propertyname.value;
         const productName = this.event.request.intent.slots.productname.value;
-        chemicalLookup("water", "boiling_point");
+        // chemicalLookup("water", "boiling_point");
 
         this.emit(':tell', `property lookup intent. property name ${propertyName} and product name ${productName}`);
     },
@@ -56,9 +56,9 @@ const handlers = {
     'HazardLookupIntent': function () {
         const propertyName = this.event.request.intent.slots.propertyname.value;
         const productName = this.event.request.intent.slots.productname.value;
-        chemicalLookup("water", "boiling_point");
+        // chemicalLookup("water", "boiling_point");
 
-        this.emit(':tell', `property lookup intent. property name ${propertyName} and product name ${productName}`);
+        this.emit(':tell', `hazard lookup intent. property name ${propertyName} and product name ${productName}`);
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
