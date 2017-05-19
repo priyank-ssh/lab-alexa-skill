@@ -51,7 +51,8 @@ const handlers = {
         // var randomFact = factArr[factIndex];
         // var speechOutput = GET_FACT_MESSAGE + randomFact;
         // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
-        this.emit(':tell', `protective gear lookup intent. body part ${bodyPart} and product name ${productName}`);
+		this.emit(':tell', getProtectiveInfo( productName} , bodyPart));
+        
     },
     'HazardLookupIntent': function () {
         const propertyName = this.event.request.intent.slots.propertyname.value;
