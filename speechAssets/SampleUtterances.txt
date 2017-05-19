@@ -4,5 +4,10 @@ LaunchRequest reset
 ProtectiveGearLookupIntent what should i wear when working with {productname}
 ProtectiveGearLookupIntent i'm working with {productname} what do i need to wear on my {bodypart}
 ProtectiveGearLookupIntent what should i wear on my {bodypart} when working with {productname}
+ProtectiveGearLookupIntent what i should wear on my {bodypart} when using {productname}
+ProtectiveGearLookupIntent how should i protect my {bodypart} when working with {productname}
+ProtectiveGearLookupIntent what do i need for my {bodypart} to work with {productname}
+ProtectiveGearLookupIntent what gear do i need on my {bodypart} to work with {productname}
+ProtectiveGearLookupIntent i should wear protective gear on my {bodypart} when using {productname}
 
 PropertyLookupIntent what's the {propertyname} of {productname}
