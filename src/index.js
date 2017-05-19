@@ -1,8 +1,9 @@
 'use strict';
 const Alexa = require('alexa-sdk');
-const slotMapping = require('./slotMapping');
-const propertyIntent = require('./propertyIntent');
 const protectiveIntent = require('./protectiveIntent');
+const protocolIntent = require('./protocolIntent');
+const propertyIntent = require('./propertyIntent');
+
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
@@ -52,14 +53,14 @@ const handlers = {
         // var speechOutput = GET_FACT_MESSAGE + randomFact;
         // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
 		    this.emit(':tell', protectiveIntent.getProtective(productName , bodyPart));
-
     },
     'HazardLookupIntent': function () {
-        const propertyName = this.event.request.intent.slots.propertyname.value;
+        const contact = this.event.request.intent.slots.contact.value;
         const productName = this.event.request.intent.slots.productname.value;
-        // chemicalLookup("water", "boiling_point");
+        const speechOutput = protocolIntent.getProtocol(productName, contact);
 
-        this.emit(':tell', `hazard lookup intent. property name ${propertyName} and product name ${productName}`);
+        console.log(`hazard lookup intent. property name ${propertyName} and product name ${productName}`);
+        this.emit(':tell', speechOutput);
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;

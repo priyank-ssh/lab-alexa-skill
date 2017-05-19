@@ -2,9 +2,8 @@
 const propertyClient = require('./propertyClient');
 
 
-function getProductProperty(product,property) {
-
-      var resp =  propertyClient.getProductProperty(product,prop);
+function getProductProperty(product, property) {
+    const resp =  propertyClient.getProductProperty(product, property);
     return resp;
 }
 
