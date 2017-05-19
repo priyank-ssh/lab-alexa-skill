@@ -26,7 +26,7 @@ function getProtectiveInfo( productId , attr){
 	});
 }	
 
-getProtectiveInfo( "C5776" , "hands");
+
 	
 	
 	
