@@ -20,9 +20,16 @@ const bodyToKey = {
 
 
 const propertyToKey = {
-  'melting point': 'melting_point',
+  'physical form': 'physical_form',
+  'molecular weight': 'molec_weight',
   'boiling point': 'boiling_point',
-	'density':'density'
+  'melting point': 'melting_point',
+  'flash point': 'flash_point',
+  'vapor pressure': 'vapor_pressure',
+	'density': 'density',
+  'p h': 'ph',  // "p h" is probably how alexa comprehends PH
+  'hazard class': 'hazard_class',
+  'pictogram': 'pictogram',
 };
 
 
