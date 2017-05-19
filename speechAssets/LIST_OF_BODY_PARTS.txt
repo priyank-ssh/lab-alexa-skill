@@ -5,3 +5,12 @@ body
 resp
 respiratory
 nose
+eye balls
+skin
+foot
+arms
+legs
+mouth
+ingest
+swallow
+tongue

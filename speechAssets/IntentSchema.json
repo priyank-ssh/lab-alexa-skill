@@ -1,8 +1,6 @@
 {
   "intents": [
-    {
-      "intent": "LaunchRequest"
-    },
+    {"intent": "LaunchRequest"},
     {
       "intent": "PropertyLookupIntent",
       "slots": [
@@ -30,13 +28,20 @@
       ]
     },
     {
-      "intent": "AMAZON.HelpIntent"
+      "intent": "HazardLookupIntent",
+      "slots": [
+        {
+          "name": "bodypart",
+          "type": "LIST_OF_BODY_PARTS"
+        },
+        {
+          "name": "productname",
+          "type": "LIST_OF_PRODUCT_NAMES"
+        }
+      ]
     },
-    {
-      "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
-    }
+    {"intent": "AMAZON.HelpIntent"},
+    {"intent": "AMAZON.StopIntent"},
+    {"intent": "AMAZON.CancelIntent"}
   ]
 }

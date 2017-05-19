@@ -11,3 +11,12 @@ ProtectiveGearLookupIntent what gear do i need on my {bodypart} to work with {pr
 ProtectiveGearLookupIntent i should wear protective gear on my {bodypart} when using {productname}
 
 PropertyLookupIntent what's the {propertyname} of {productname}
+
+HazardLookupIntent i got {productname} on my {bodypart}
+HazardLookupIntent i got {productname} on my {bodypart}. What do I do?
+HazardLookupIntent What do I do when i get {productname} on my {bodypart}.
+HazardLookupIntent I dropped {productname} on my {bodypart}.
+HazardLookupIntent I dropped {productname} on my {bodypart}. Help?
+HazardLookupIntent I exposed {productname} to {bodypart}.
+HazardLookupIntent I exposed {productname} to me {bodypart}.
+HazardLookupIntent I {bodypart} the {productname}.
