@@ -1,15 +1,15 @@
 const protectiveClient = require('./protectiveClient');
+const slotMapping = require('./slotMapping');
+
 
 function getProtective(productName, bodyPart) {
-
-    // TODO: get productId from slotMapping.productNameToProductId
-    var productId = '';
-    // TODO: get bodyKey from slotMapping.bodyToKey
-    var bodyKey = '';
-    var resp =  protectiveClient.getProtectiveInfo(productId, bodyKey);
+    const productId = slotMapping.productNameToProductId[productName];
+	console.log("product name : " + productName + "mapped to product id" +productId)
+	var resp =  protectiveClient.getProtectiveInfo(productId, bodyPart);
     return resp;
 }
 
 module.exports = {
     getProtective: getProtective,
 };
+//getProtective("cocaine", "hands");
