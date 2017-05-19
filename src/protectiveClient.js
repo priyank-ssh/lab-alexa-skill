@@ -1,4 +1,4 @@
-var request = require('request');
+const request = require('request');
 const baseUrl = 'https://api.mconnectedlab.com/sial/safety/solrservice/safety/searchMobppe/${PRODUCT_ID}';
 const delimiter = '.';
 

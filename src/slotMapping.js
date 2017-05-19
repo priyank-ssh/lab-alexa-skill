@@ -1,6 +1,6 @@
 const protocol = require('./protocolMapping');
 
-const productNameToProductId = {
+exports.productNameToProductId = {
     'cocaine hydrochloride': 'C5776',
     'cocaine': 'C5776',
     'abeitic acid':'0010',
@@ -13,28 +13,21 @@ const productNameToProductId = {
 };
 
 
-const bodyToKey = {
+exports.bodyToKey = {
   'arm': 'arm',
   'leg': 'leg',
 };
 
 
-const propertyToKey = {
+exports.propertyToKey = {
   'melting point': 'melting_point',
   'boiling point': 'boiling_point',
 	'density':'density'
 };
 
 
-const productToProtocol = {
+exports.productToProtocol = {
     'cocaine hydrochloride': protocol.cocaine,
     'abeitic acid':'0010',
 
-};
-
-module.exports = {
-    productNameToProductId: productNameToProductId,
-    bodyToKey: bodyToKey,
-    propertyToKey: propertyToKey,
-    productToProtocol: productToProtocol,
 };
