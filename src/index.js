@@ -88,11 +88,11 @@ const handlers = {
     'ListProductIntent': function () {
         console.log(`List Intent`);
 
-        if (!Object.keys(this.attributes).length) {
+        if (!Object.keys(this.attributes['products']).length) {
             this.emit(':ask', "No products selected. Please sad add product.");
         }
 
-        this.emit(':ask', "You have. " + productName.join(", "));
+        this.emit(':ask', "You have. " + this.attributes['products'].join(", "));
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
