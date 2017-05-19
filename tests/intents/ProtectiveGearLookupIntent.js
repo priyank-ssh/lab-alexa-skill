@@ -15,15 +15,15 @@ module.exports = {
     "requestId": "EdwRequestId.61eeb3f2-c0c7-4588-b573-29b7198d84e6",
     "timestamp": "2016-06-01T03:03:58Z",
     "intent": {
-      "name": "AdmitSwearIntent",
+      "name": "ProtectiveGearLookupIntent",
       "slots": {
-        "name": {
-          "name": "name",
-          "value": "jon"
+        "productname": {
+          "name": "productname",
+          "value": "benzene"
         },
-        "swear": {
-          "name": "swear",
-          "value": "ass hat"
+        "bodypart": {
+          "name": "bodypart",
+          "value": "hands"
         }
       }
     },

@@ -2,7 +2,7 @@
 const Alexa = require('alexa-sdk');
 const propertyLookup = require('./propertyLookup');
 const protectiveIntent = require('./protectiveIntent');
-const slotMapping = require('./slotMapping');
+// const slotMapping = require('./slotMapping');
 const proctectiveClient = require('./proctectiveClient');
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
@@ -38,7 +38,12 @@ const handlers = {
         this.emit(':tell', `property lookup intent. property name ${propertyName} and product name ${productName}`);
     },
     'ProtectiveGearLookupIntent': function () {
-        const bodyPart = this.event.request.intent.slots.bodypart.value;
+        const bodyPart= this.event.request.intent.slots.bodypart.value;
+        // var itemName;
+        // if (itemSlot && itemSlot.value) {
+        //     itemName = itemSlot.value.toLowerCase();
+        // }
+
         const productName = this.event.request.intent.slots.productname.value;
         // var factArr = data;
         // var factIndex = Math.floor(Math.random() * factArr.length);
