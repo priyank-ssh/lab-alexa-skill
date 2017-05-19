@@ -1,5 +1,6 @@
 LaunchRequest start over
 LaunchRequest reset
+
 GetProtectiveGearIntent protective gear
 GetProtectiveGearIntent tell me the protective gear
 GetProtectiveGearIntent what should I wear
