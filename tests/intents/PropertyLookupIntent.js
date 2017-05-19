@@ -19,11 +19,11 @@ module.exports = {
       "slots": {
         "productname": {
           "name": "productname",
-          "value": "benzene"
+          "value": "cocaine"
         },
         "propertyname": {
           "name": "propertyname",
-          "value": "boiling point"
+          "value": "melting point"
         }
       }
     },

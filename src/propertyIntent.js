@@ -2,11 +2,10 @@ const slotMapping = require('./slotMapping');
 const propertyClient = require('./propertyClient');
 
 
-function getProductProperty(product, property) {
+function getProductProperty(product, property, callback) {
     const productID = slotMapping.productNameToProductId[product];
     const propertyKey = slotMapping.propertyToKey[property];
-    const resp =  propertyClient.getProductProperty(productID, propertyKey);
-    return resp;
+    propertyClient.getProductProperty(productID, propertyKey, callback);
 }
 
 module.exports = {
