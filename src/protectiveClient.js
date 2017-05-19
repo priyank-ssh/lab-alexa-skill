@@ -7,7 +7,7 @@ module.exports = {
 };
 
 
-function getProtectiveInfo(productId, attr) {
+function getProtectiveInfo(productId, attr,callback) {
 	console.log();
 	let _url = baseUrl;
 	let _attr = "ppe" + attr;
