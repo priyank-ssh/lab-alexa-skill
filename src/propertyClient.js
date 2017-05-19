@@ -1,5 +1,5 @@
 var request = require('request');
- 
+
  function getProductProperty(catalogNumber,infoFor){
      var url = 'https://api.mconnectedlab.com/sial/safety/solrservice/safety/mobsearch/'+catalogNumber;
     // console.log(url)
@@ -22,3 +22,8 @@ var request = require('request');
  } 
 
 getProductProperty('00010','melting_point');
+
+ 
+ module.exports = {
+    getProductProperty: getProductProperty,
+};
