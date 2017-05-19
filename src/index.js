@@ -5,9 +5,9 @@ var Alexa = require('alexa-sdk');
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 
-//Replace with your app ID (OPTIONAL).  You can find this value at the top of your skill's page on http://developer.amazon.com.  
+//Replace with your app ID (OPTIONAL).  You can find this value at the top of your skill's page on http://developer.amazon.com.
 //Make sure to enclose your value in quotes, like this: var APP_ID = "amzn1.ask.skill.bb4045e6-b3e8-4133-b650-72923c5980f1";
-var APP_ID = undefined;
+var APP_ID = 'amzn1.ask.skill.3fdf9436-7341-4264-9ae2-fa517c6cd13f';
 
 var SKILL_NAME = "Space Facts";
 var GET_FACT_MESSAGE = "Here's your fact: ";
@@ -35,7 +35,7 @@ var data = [
 ];
 
 //=========================================================================================================================================
-//Editing anything below this line might break your skill.  
+//Editing anything below this line might break your skill.
 //=========================================================================================================================================
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -46,14 +46,16 @@ exports.handler = function(event, context, callback) {
 
 var handlers = {
     'LaunchRequest': function () {
-        this.emit('GetNewFactIntent');
+        // this.emit('GetNewFactIntent');
+        this.emit(':tell', 'hello lab');
     },
-    'GetNewFactIntent': function () {
-        var factArr = data;
-        var factIndex = Math.floor(Math.random() * factArr.length);
-        var randomFact = factArr[factIndex];
-        var speechOutput = GET_FACT_MESSAGE + randomFact;
-        this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
+    'GetProtectiveGearIntent': function () {
+        // var factArr = data;
+        // var factIndex = Math.floor(Math.random() * factArr.length);
+        // var randomFact = factArr[factIndex];
+        // var speechOutput = GET_FACT_MESSAGE + randomFact;
+        // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
+        this.emit(':tell', 'get protective gear to do');
     },
     'AMAZON.HelpIntent': function () {
         var speechOutput = HELP_MESSAGE;
