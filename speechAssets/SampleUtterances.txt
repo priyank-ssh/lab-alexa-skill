@@ -1,6 +1,8 @@
 LaunchRequest start over
 LaunchRequest reset
 
-GetProtectiveGearIntent protective gear
-GetProtectiveGearIntent tell me the protective gear
-GetProtectiveGearIntent what should I wear
+ProtectiveGearLookupIntent what should i wear when working with {productname}
+ProtectiveGearLookupIntent i'm working with {productname}. what do i need to wear on my {bodypart}
+ProtectiveGearLookupIntent what should i wear on my {bodypart} when working with {productname}
+
+PropertyLookupIntent to do

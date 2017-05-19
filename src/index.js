@@ -1,6 +1,9 @@
 'use strict';
 const Alexa = require('alexa-sdk');
-const chemicalLookup = require('./chemicalLookup');
+const propertyLookup = require('./propertyLookup');
+const protectiveIntent = require('./protectiveIntent');
+const slotMapping = require('./slotMapping');
+const proctectiveClient = require('./proctectiveClient');
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
@@ -14,6 +17,7 @@ const HELP_REPROMPT = "What can I help you with?";
 const STOP_MESSAGE = "Thank you for being safe! Goodbye!";
 
 //=========================================================================================================================================
+<<<<<<< HEAD
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
 //=========================================================================================================================================
 // TODO: @priyank
@@ -29,6 +33,8 @@ const productNamesToProductIds = {
 };
 
 //=========================================================================================================================================
+=======
+>>>>>>> 11eb033fca42e930eb1fff6d71528725dab97bbf
 //Editing anything below this line might break your skill.
 //=========================================================================================================================================
 exports.handler = function(event, context, callback) {
@@ -40,16 +46,24 @@ exports.handler = function(event, context, callback) {
 
 const handlers = {
     'LaunchRequest': function () {
-        // this.emit('GetNewFactIntent');
         this.emit(':tell', 'hello lab');
     },
-    'GetProtectiveGearIntent': function () {
-
-        this.emit(':tell', 'get protective gear to do');
-    },
-    'ChemicalLookupIntent': function () {
+    'PropertyLookupIntent': function () {
+        const propertyName = this.event.request.intent.slots.propertyname.value;
+        const productName = this.event.request.intent.slots.productname.value;
         chemicalLookup("water", "boiling_point");
-        this.emit(':tell', 'get protective gear to do');
+
+        this.emit(':tell', `property lookup intent. property name ${propertyName} and product name ${productName}`);
+    },
+    'ProtectiveGearLookupIntent': function () {
+        const bodyPart = this.event.request.intent.slots.bodypart.value;
+        const productName = this.event.request.intent.slots.productname.value;
+        // var factArr = data;
+        // var factIndex = Math.floor(Math.random() * factArr.length);
+        // var randomFact = factArr[factIndex];
+        // var speechOutput = GET_FACT_MESSAGE + randomFact;
+        // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
+        this.emit(':tell', `protective gear lookup intent. body part ${bodyPart} and product name ${productName}`);
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
