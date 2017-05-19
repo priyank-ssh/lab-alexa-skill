@@ -21,7 +21,11 @@ var STOP_MESSAGE = "Goodbye!";
 // TODO: @priyank
 var productNamesToProductIds = {
   'cocaine hydrochloride': 'C5776',
-  'TODO': 'TODO',
+  'abeitic acid':'0010',
+  'sodium phosphate':'342483',
+  'trizma base': 'T1503',
+  'dichlorophene':'35992',
+ 'chloromethyl methyl sulfide':'C54007',
 };
 
 //=========================================================================================================================================
