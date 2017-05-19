@@ -27,7 +27,7 @@ exports.handler = function(event, context, callback) {
 
 const handlers = {
     'LaunchRequest': function () {
-        const speechOutput = "Welcome to Connected Labs";
+        const speechOutput = "Welcome to Connected Lab";
         const reprompt = speechOutput;
         this.emit(':ask', speechOutput, reprompt);
     },
