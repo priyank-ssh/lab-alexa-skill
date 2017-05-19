@@ -1,8 +1,42 @@
-{ "intents": [
-    { "intent": "LaunchRequest" },
-    { "intent": "GetProtectiveGearIntent" },
-    { "intent": "ChemicalLookupIntent" },
-    { "intent": "AMAZON.HelpIntent" },
-    { "intent": "AMAZON.StopIntent" },
-    { "intent": "AMAZON.CancelIntent" }
-]}
+{
+  "intents": [
+    {
+      "intent": "LaunchRequest"
+    },
+    {
+      "intent": "PropertyLookupIntent",
+      "slots": [
+        {
+          "name": "propertyname",
+          "type": "LIST_OF_PROPERTY_NAMES"
+        },
+        {
+          "name": "productname",
+          "type": "LIST_OF_PRODUCT_NAMES"
+        }
+      ]
+    },
+    {
+      "intent": "ProtectiveGearLookupIntent",
+      "slots": [
+        {
+          "name": "bodypart",
+          "type": "LIST_OF_BODY_PARTS"
+        },
+        {
+          "name": "productname",
+          "type": "LIST_OF_PRODUCT_NAMES"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
