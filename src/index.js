@@ -24,6 +24,8 @@ const productNamesToProductIds = {
   'trizma base': 'T1503',
   'dichlorophene':'35992',
  'chloromethyl methyl sulfide':'C54007',
+ 'phenyl cyanate solution':'744417',
+ 'hydrogen bromide':'295418'
 };
 
 //=========================================================================================================================================
