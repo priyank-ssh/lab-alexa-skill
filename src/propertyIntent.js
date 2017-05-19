@@ -1,9 +1,11 @@
 
 const propertyClient = require('./propertyClient');
 
+
 function getProductProperty(product,property) {
 
-    return "Glasses"
+      var resp =  propertyClient.getProductProperty(product,prop);
+    return resp;
 }
 
 module.exports = {
