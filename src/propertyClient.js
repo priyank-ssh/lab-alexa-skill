@@ -8,20 +8,18 @@ var request = require('request');
          if (error) return callback(error, null);
          if (!error && response.statusCode == 200) {
              var jsonData  = JSON.parse(body)
-             var singleProperty = jsonData[0];
-             // console.log(singleProperty)
-             /*for (var i = 0; i < jsonData.length; i++) {
-                 singleProperty = jsonData[i];
-                console.log(singleProperty)
-             }*/
-             var str=jsonData[0][infoFor];
-             if(infoFor ==  'melting_point' || infoFor == 'boiling_point'  || infoFor == 'flash_point'){
+             var firstResult = jsonData[0];
+             if (typeof firstResult === 'undefined') {
+                return callback(null, 'Sorry! I dont have any data available for this product');
+             }
+             var str = firstResult[infoFor];
+             if (infoFor === 'melting_point' || infoFor === 'boiling_point' || infoFor === 'flash_point') {
                  str = str.replace(" C"," degree celcius");
                 // console.log(jsonData[0][infoFor]);
                 console.log(str);
              }
-             if(str == "No Data Available"){
-                 str="Sorry! I dont have any data available for this product";
+             if (str === 'No Data Available') {
+                 str = "Sorry! I dont have any data available for this property";
              }
              callback(null, str);
          }
