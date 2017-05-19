@@ -1,6 +1,6 @@
 'use strict';
 const Alexa = require('alexa-sdk');
-const chemicalLookup = require('./chemicalLookup');
+const propertyLookup = require('./propertyLookup');
 const slotMapping = require('./slotMapping');
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
