@@ -19,20 +19,21 @@ function getProtectiveInfo(productId, attr,callback) {
 			var _json =   JSON.parse(body);
 			if (_json[0] !== undefined  && _json[0][_attr] !== undefined){
 				var _attrdes = _json[0][_attr].split(delimiter);
-				console.log(_str );
-				_str= _attrdes[0] + _attrdes[1]
+				_str= _attrdes[0] + _attrdes[1];
+				console.log(_str )
 			 }else{
-				 console.log("No Protective measures found in the system for the product" );
-				_str = "No Protective measures found in the system for the product";
+				 console.log("Sorry! No Protective measures found in the system for the product" );
+				_str = "Sorry! No Protective measures found in the system for the product";
 			 }
 			 
 			 callback(null, _str);
 		 }	
-		
 
 	});
 }
 
+
+//getProtectiveInfo("C5776", "eyes",function(){});
 
 
 
