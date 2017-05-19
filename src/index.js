@@ -51,7 +51,7 @@ const handlers = {
         // var randomFact = factArr[factIndex];
         // var speechOutput = GET_FACT_MESSAGE + randomFact;
         // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
-		this.emit(':tell', getProtectiveInfo( productName} , bodyPart));
+		this.emit(':tell', getProtectiveInfo( productName , bodyPart));
         
     },
     'HazardLookupIntent': function () {
