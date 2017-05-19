@@ -37,7 +37,8 @@ const handlers = {
     'PropertyLookupIntent': function () {
         const propertyName = this.event.request.intent.slots.propertyname.value;
         const productName = this.event.request.intent.slots.productname.value;
-        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
+        // const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
+        const respType = ':tell';
         console.log(`PropertyLookupIntent propertyName: ${propertyName}, productName: ${productName}, respType: ${respType}`);
 
         propertyIntent.getProductProperty(productName, propertyName, (err, resp) => {
@@ -47,7 +48,8 @@ const handlers = {
     'ProtectiveGearLookupIntent': function () {
         const bodyPart= this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
-        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
+        // const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
+        const respType = ':tell';
         console.log(`ProtectiveGearLookupIntent bodyPart: ${bodyPart}, productName: ${productName}, respType: ${respType}`);
 
 	    protectiveIntent.getProtective(productName , bodyPart , (err, resp) => {
@@ -57,7 +59,8 @@ const handlers = {
     'HazardLookupIntent': function () {
         const bodyPart = this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
-        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
+        // const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
+        const respType = ':tell';
         console.log(`HazardLookupIntent bodyPart: ${bodyPart}, productName: ${productName}, respType: ${respType}`);
 
         protocolIntent.getProtocol(productName, bodyPart, (err, resp) => {
