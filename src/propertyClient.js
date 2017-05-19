@@ -15,13 +15,14 @@ var request = require('request');
                 console.log(singleProperty)
              }*/
              var str=jsonData[0][infoFor];
-             if(infoFor ==  'melting_point' || infoFor == 'boiling_point' ){
-
+             if(infoFor ==  'melting_point' || infoFor == 'boiling_point'  || infoFor == 'flash_point'){
                  str = str.replace(" C"," degree celcius");
                 // console.log(jsonData[0][infoFor]);
                 console.log(str);
              }
-
+             if(str == "No Data Available"){
+                 str="Sorry! I dont have any data available for this product";
+             }
              callback(null, str);
          }
      })
