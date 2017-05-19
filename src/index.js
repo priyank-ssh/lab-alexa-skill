@@ -1,6 +1,5 @@
 'use strict';
 const Alexa = require('alexa-sdk');
-//const propertyLookup = require('./propertyClient');
 const protectiveIntent = require('./protectiveIntent');
 const slotMapping = require('./slotMapping');
 const proctectiveClient = require('./proctectiveClient');
