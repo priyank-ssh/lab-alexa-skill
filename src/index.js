@@ -3,7 +3,7 @@ const Alexa = require('alexa-sdk');
 const protectiveIntent = require('./protectiveIntent');
 const protocolIntent = require('./protocolIntent');
 const propertyIntent = require('./propertyIntent');
-const protectiveClient = require('./protectiveClient');
+
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
@@ -35,7 +35,7 @@ const handlers = {
     'PropertyLookupIntent': function () {
         const propertyName = this.event.request.intent.slots.propertyname.value;
         const productName = this.event.request.intent.slots.productname.value;
-        propertyIntent.getProductProperty(propertyName, propertyName);
+        // TODO: fix errors propertyIntent.getProductProperty(propertyName, propertyName);
 
         this.emit(':tell', `property lookup intent. property name ${propertyName} and product name ${productName}`);
     },
@@ -52,8 +52,7 @@ const handlers = {
         // var randomFact = factArr[factIndex];
         // var speechOutput = GET_FACT_MESSAGE + randomFact;
         // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
-        this.emit(':tell', protectiveClient.getProtectiveInfo( productName , bodyPart));
-
+		    this.emit(':tell', protectiveIntent.getProtective(productName , bodyPart));
     },
     'HazardLookupIntent': function () {
         const contact = this.event.request.intent.slots.contact.value;
