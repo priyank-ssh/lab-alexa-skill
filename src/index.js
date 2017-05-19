@@ -1,6 +1,7 @@
 'use strict';
 const Alexa = require('alexa-sdk');
 const chemicalLookup = require('./chemicalLookup');
+const slotMapping = require('./slotMapping');
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
@@ -12,15 +13,6 @@ const APP_ID = 'amzn1.ask.skill.3fdf9436-7341-4264-9ae2-fa517c6cd13f';
 const HELP_MESSAGE = "You can say tell me a space fact, or, you can say exit... What can I help you with?";
 const HELP_REPROMPT = "What can I help you with?";
 const STOP_MESSAGE = "Thank you for being safe! Goodbye!";
-
-//=========================================================================================================================================
-//TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
-//=========================================================================================================================================
-// TODO: @priyank
-const productNamesToProductIds = {
-  'cocaine hydrochloride': 'C5776',
-  'TODO': 'TODO',
-};
 
 //=========================================================================================================================================
 //Editing anything below this line might break your skill.
