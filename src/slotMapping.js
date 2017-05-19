@@ -3,13 +3,14 @@ const protocol = require('./protocolMapping');
 exports.productNameToProductId = {
     'cocaine hydrochloride': 'C5776',
     'cocaine': 'C5776',
-    'abeitic acid':'0010',
+    'abeitic acid': '00010',
     'sodium phosphate':'342483',
     'trizma base': 'T1503',
-    'dichlorophene':'35992',
-    'chloromethyl methyl sulfide':'C54007',
-    'phenyl cyanate solution':'744417',
-    'hydrogen bromide': '295418'
+    'triz': 'T1503',
+    'dichlorophene': '35992',
+    'chloromethyl methyl sulfide': 'C54007',
+    'phenyl cyanate solution': '744417',
+    'benzoic acid': '242381',
 };
 
 
@@ -18,7 +19,7 @@ exports.bodyToKey = {
     'leg': 'leg',
 };
 
-exports.bodyToKey = {
+exports.bodyToExposeKey = {
     'eye': 'eye',
     'eye balls': 'eye',
     'skin': 'skin',
@@ -35,16 +36,16 @@ exports.bodyToKey = {
 };
 
 exports.propertyToKey = {
-  'physical form': 'physical_form',
-  'molecular weight': 'molec_weight',
-  'boiling point': 'boiling_point',
-  'melting point': 'melting_point',
-  'flash point': 'flash_point',
-  'vapor pressure': 'vapor_pressure',
-	'density': 'density',
-  'p h': 'ph',  // "p h" is probably how alexa comprehends PH
-  'hazard class': 'hazard_class',
-  'pictogram': 'pictogram',
+    'physical form': 'physical_form',
+    'molecular weight': 'molec_weight',
+    'boiling point': 'boiling_point',
+    'melting point': 'melting_point',
+    'flash point': 'flash_point',
+    'vapor pressure': 'vapor_pressure',
+    'density': 'density',
+    'p h': 'ph',  // "p h" is probably how alexa comprehends PH
+    'hazard class': 'hazard_class',
+    'pictogram': 'pictogram',
 };
 
 

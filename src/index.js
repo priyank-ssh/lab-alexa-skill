@@ -49,12 +49,14 @@ const handlers = {
             });
     },
     'HazardLookupIntent': function () {
-        const contact = this.event.request.intent.slots.contact.value;
+        const bodypart = this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
-        const speechOutput = protocolIntent.getProtocol(productName, contact);
+        console.log(`hazard lookup intent. body part name ${bodypart} and product name ${productName}`);
 
-        console.log(`hazard lookup intent. property name ${propertyName} and product name ${productName}`);
-        this.emit(':tell', speechOutput);
+        protocolIntent.getProtocol(productName, bodypart, (err, resp) => {
+            this.emit(':tell', resp);
+        });
+
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;
