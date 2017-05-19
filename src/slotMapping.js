@@ -21,6 +21,6 @@ const bodyToKey = {
 };
 
 const propertyToKey = {
-    'cocaine hydrochloride': 'C5776',
-    'TODO': 'TODO',
+    'melting point': 'melting_point',
+    'boiling point': 'boiling_point',
 };
