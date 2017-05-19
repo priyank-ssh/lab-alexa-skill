@@ -1,12 +1,17 @@
-var querystring = require('querystring');
-var https = require('https');
-var baseUrl = 'https://api.mconnectedlab.com/sial/safety/solrservice/safety/searchMobppe/${PRODUCT_ID}';
-var delimiter = '.';
+const querystring = require('querystring');
+const https = require('https');
+const baseUrl = 'https://api.mconnectedlab.com/sial/safety/solrservice/safety/searchMobppe/${PRODUCT_ID}';
+const delimiter = '.';
 
-var getProtectiveInfo = function ( productId , attr){
-	var _url = baseUrl;
-	var _attr = "ppe"+attr;
-	var _str = '';
+module.exports = {
+    getProtectiveInfo: getProtectiveInfo,
+};
+
+
+function getProtectiveInfo( productId , attr){
+	let _url = baseUrl;
+	let _attr = "ppe"+attr;
+	let _str = '';
 	_url = _url.replace("${PRODUCT_ID}", productId);
 	var request = https.get(_url, function(response) {
 		response.on('data', function(chunk) {
