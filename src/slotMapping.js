@@ -1,10 +1,3 @@
-module.exports = {
-    productNameToProductId: productNameToProductId,
-    bodyToKey: bodyToKey,
-    propertyToKey: propertyToKey
-};
-
-// TODO: @priyank
 const productNameToProductId = {
     'cocaine hydrochloride': 'C5776',
     'abeitic acid':'0010',
@@ -26,4 +19,10 @@ const propertyToKey = {
     'melting point': 'melting_point',
     'boiling point': 'boiling_point',
 	'density':'density'
+};
+
+module.exports = {
+    productNameToProductId: productNameToProductId,
+    bodyToKey: bodyToKey,
+    propertyToKey: propertyToKey
 };
