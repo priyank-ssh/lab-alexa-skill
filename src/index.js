@@ -26,7 +26,6 @@ exports.handler = function(event, context, callback) {
 
 const handlers = {
     'LaunchRequest': function () {
-        // this.emit('GetNewFactIntent');
         this.emit(':tell', 'hello lab');
     },
     'GetProtectiveGearIntent': function () {
