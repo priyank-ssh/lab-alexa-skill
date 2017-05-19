@@ -35,23 +35,13 @@ const handlers = {
     'PropertyLookupIntent': function () {
         const propertyName = this.event.request.intent.slots.propertyname.value;
         const productName = this.event.request.intent.slots.productname.value;
-        // TODO: fix errors propertyIntent.getProductProperty(propertyName, propertyName);
 
-        this.emit(':tell', `property lookup intent. property name ${propertyName} and product name ${productName}`);
+        this.emit(':tell', propertyIntent.getProductProperty(productName, propertyName));
     },
     'ProtectiveGearLookupIntent': function () {
         const bodyPart= this.event.request.intent.slots.bodypart.value;
-        // var itemName;
-        // if (itemSlot && itemSlot.value) {
-        //     itemName = itemSlot.value.toLowerCase();
-        // }
-
         const productName = this.event.request.intent.slots.productname.value;
-        // var factArr = data;
-        // var factIndex = Math.floor(Math.random() * factArr.length);
-        // var randomFact = factArr[factIndex];
-        // var speechOutput = GET_FACT_MESSAGE + randomFact;
-        // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
+
 		    this.emit(':tell', protectiveIntent.getProtective(productName , bodyPart));
     },
     'HazardLookupIntent': function () {
