@@ -20,12 +20,13 @@ function getProtectiveInfo( productId , attr){
 		response.on('end', function () {
 			var _json =   JSON.parse(_str);
 			var _attrdes = _json[0][_attr].split(delimiter);
-			console.log(_attrdes[0] + _attrdes[0] );
+			console.log(_attrdes[0] + _attrdes[1] );
+			return _attrdes[0] + _attrdes[1] +"." ;
 		});
 	});
 }	
 
-getProtectiveInfo("C5776" , "hands");
+getProtectiveInfo( "C5776" , "hands");
 	
 	
 	
