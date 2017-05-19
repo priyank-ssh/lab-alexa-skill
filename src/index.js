@@ -44,7 +44,9 @@ const handlers = {
         const bodyPart= this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
 
-		    this.emit(':tell', protectiveIntent.getProtective(productName , bodyPart));
+	    protectiveIntent.getProtective(productName , bodyPart , (err, resp) => {
+          this.emit(':tell', resp);
+            });
     },
     'HazardLookupIntent': function () {
         const contact = this.event.request.intent.slots.contact.value;
