@@ -36,7 +36,9 @@ const handlers = {
         const propertyName = this.event.request.intent.slots.propertyname.value;
         const productName = this.event.request.intent.slots.productname.value;
 
-        this.emit(':tell', propertyIntent.getProductProperty(productName, propertyName));
+        propertyIntent.getProductProperty(productName, propertyName, (err, resp) => {
+          this.emit(':tell', resp);
+        });
     },
     'ProtectiveGearLookupIntent': function () {
         const bodyPart= this.event.request.intent.slots.bodypart.value;
