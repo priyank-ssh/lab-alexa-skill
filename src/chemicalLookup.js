@@ -1,6 +1,6 @@
 
 module.exports = {
-    foo: chemicalLookup,
+    getProperty: getProperty,
 };
 
 function getProperty(chemical, property) {

@@ -1,6 +1,6 @@
 'use strict';
-let Alexa = require('alexa-sdk');
-const chemicalLookup = require('chemicalLookup');
+const Alexa = require('alexa-sdk');
+const chemicalLookup = require('./chemicalLookup');
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
@@ -9,8 +9,6 @@ const chemicalLookup = require('chemicalLookup');
 //Make sure to enclose your value in quotes, like this: var APP_ID = "amzn1.ask.skill.bb4045e6-b3e8-4133-b650-72923c5980f1";
 const APP_ID = 'amzn1.ask.skill.3fdf9436-7341-4264-9ae2-fa517c6cd13f';
 
-const SKILL_NAME = "Space Facts";
-const GET_FACT_MESSAGE = "Here's your fact: ";
 const HELP_MESSAGE = "You can say tell me a space fact, or, you can say exit... What can I help you with?";
 const HELP_REPROMPT = "What can I help you with?";
 const STOP_MESSAGE = "Thank you for being safe! Goodbye!";
@@ -19,7 +17,7 @@ const STOP_MESSAGE = "Thank you for being safe! Goodbye!";
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
 //=========================================================================================================================================
 // TODO: @priyank
-var productNamesToProductIds = {
+const productNamesToProductIds = {
   'cocaine hydrochloride': 'C5776',
   'TODO': 'TODO',
 };
@@ -40,11 +38,7 @@ const handlers = {
         this.emit(':tell', 'hello lab');
     },
     'GetProtectiveGearIntent': function () {
-        // var factArr = data;
-        // var factIndex = Math.floor(Math.random() * factArr.length);
-        // var randomFact = factArr[factIndex];
-        // var speechOutput = GET_FACT_MESSAGE + randomFact;
-        // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
+
         this.emit(':tell', 'get protective gear to do');
     },
     'ChemicalLookupIntent': function () {
