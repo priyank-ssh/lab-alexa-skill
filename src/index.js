@@ -59,12 +59,12 @@ const handlers = {
     'HazardLookupIntent': function () {
         const bodyPart = this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
-        // const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
-        const respType = ':tell';
-        console.log(`HazardLookupIntent bodyPart: ${bodyPart}, productName: ${productName}, respType: ${respType}`);
+        console.log(`HazardLookupIntent bodyPart: ${bodyPart}, productName: ${productName}`);
 
         protocolIntent.getProtocol(productName, bodyPart, (err, resp) => {
-            this.emit(respType, resp);
+            const reprompt = "Would you like us to find the closest Hospital?";
+            const speechOutput = resp + " " + reprompt;
+            this.emit(':ask', resp, reprompt);
         });
 
     },
@@ -93,6 +93,14 @@ const handlers = {
         }
 
         this.emit(':ask', "You have. " + this.attributes['products'].join(", "));
+    },
+    'AMAZON.Yes': function () {
+        const speechOutput = "The closets hospital is: Mount Sinai Doctors - Brooklyn Heights Urgent Care";
+        this.emit(':tell', speechOutput);
+    },
+    'AMAZON.No': function () {
+        const speechOutput = "Best of luck.";
+        this.emit(':tell', speechOutput);
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = HELP_MESSAGE;

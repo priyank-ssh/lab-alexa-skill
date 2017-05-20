@@ -59,6 +59,8 @@
       ]
     },
     {"intent": "ListProductIntent"},
+    {"intent": "AMAZON.Yes"},
+    {"intent": "AMAZON.No"},
     {"intent": "AMAZON.HelpIntent"},
     {"intent": "AMAZON.StopIntent"},
     {"intent": "AMAZON.CancelIntent"}
