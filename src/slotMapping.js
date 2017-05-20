@@ -11,6 +11,8 @@ exports.productNameToProductId = {
     'chloromethyl methyl sulfide': 'C54007',
     'phenyl cyanate solution': '744417',
     'benzoic acid': '242381',
+    'been zork acid': '242381', // for demo
+    'in zork acid': '242381', // for demo
 };
 
 
@@ -65,4 +67,6 @@ exports.productToProtocol = {
     'phenyl cyanate solution': protocol.phenylCyanateSolution,
     'hydrogen bromide': protocol.hydrogenBromide,
     'benzoic acid': protocol.abeiticAcid,  // for demo
+    'been zork acid': protocol.abeiticAcid,  // for demo
+    'in zork acid': protocol.abeiticAcid,  // for demo
 };
