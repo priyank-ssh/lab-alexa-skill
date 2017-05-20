@@ -40,7 +40,7 @@ const handlers = {
         console.log("Property Lookup Intent");
         const productName = this.event.request.intent.slots.productname.value;
         const propertyNameSlot = this.event.request.intent.slots.propertyname;
-        if (!propertyNameSlot) {
+        if (!propertyNameSlot || !propertyNameSlot.value) {
             console.log(`PropertyLookupIntent productName: ${productName}`);
             return propertyIntent.getAllProductProperties(productName, (err, resp) => {
                 this.emit(':tell', resp);

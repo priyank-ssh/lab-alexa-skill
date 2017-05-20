@@ -23,7 +23,7 @@ module.exports = {
         },
         "bodypart": {
           "name": "bodypart",
-          "value": "hands"
+          "value": "face"
         }
       }
     },
