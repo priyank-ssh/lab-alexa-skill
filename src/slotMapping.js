@@ -3,6 +3,7 @@ const protocol = require('./protocolMapping');
 exports.productNameToProductId = {
     'cocaine hydrochloride': 'C5776',
     'cocaine': 'C5776',
+    'cooking': 'C5776',
     'abeitic acid': '00010',
     'sodium phosphate':'342483',
     'trizma base': 'T1503',
@@ -72,6 +73,7 @@ exports.propertyToKey = {
 exports.productToProtocol = {
     'cocaine hydrochloride': protocol.cocaineHydrochloride,
     'cocaine': protocol.cocaine,
+    'cooking': protocol.cocaine,
     'abeitic acid': protocol.abeiticAcid,
     'sodium phosphate': protocol.sodiumPhosphate,
     'trizma base': protocol.trizmaBase,
