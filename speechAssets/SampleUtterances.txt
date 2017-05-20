@@ -20,6 +20,7 @@ PropertyLookupIntent give me the {propertyname} of {productname}
 PropertyLookupIntent i wanna know the {propertyname} of {productname}
 
 HazardLookupIntent i got {productname} on my {bodypart}
+HazardLookupIntent i have {productname} on my {bodypart}
 HazardLookupIntent i got {productname} on my {bodypart} what do I do
 HazardLookupIntent what do I do when i get {productname} on my {bodypart}
 HazardLookupIntent i dropped {productname} on my {bodypart}

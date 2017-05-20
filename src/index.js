@@ -62,7 +62,7 @@ const handlers = {
         protocolIntent.getProtocol(productName, bodyPart, (err, resp) => {
             const reprompt = "Would you like us to find the closest Hospital?";
             const speechOutput = resp + " " + reprompt;
-            this.emit(':ask', resp, reprompt);
+            this.emit(':ask', speechOutput, reprompt);
         });
 
     },
