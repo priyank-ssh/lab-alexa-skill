@@ -88,14 +88,14 @@ const handlers = {
         console.log(`Removing product name ${productName}`);
         let products = this.attributes['products'] || [];
 
-        this.attributes['products'] = utils.pop(products, productName);;
+        this.attributes['products'] = utils.pop(products, productName);
         this.emit(':ask', "Removing. " + productName);
     },
     'ListProductIntent': function () {
         console.log(`List Intent`);
 
         if (!this.attributes.products) {
-            this.emit(':ask', "No products selected. Please sad add product.");
+            return this.emit(':ask', "No products selected. Please sad add product.");
         }
 
         this.emit(':ask', "You have. " + this.attributes['products'].join(", "));
