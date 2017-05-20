@@ -26,7 +26,7 @@ function getAllProductProperties(product, callback) {
 
 
 function speakNerd(product, callback) {
-    let speechOutput = "Face front, true believer"
+    let speechOutput = "Face front, true believer";
     switch (product)
     {
         case "vibranium":
