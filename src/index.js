@@ -88,7 +88,7 @@ const handlers = {
     'ListProductIntent': function () {
         console.log(`List Intent`);
 
-        if (this.attributes.products) {
+        if (!this.attributes.products) {
             this.emit(':ask', "No products selected. Please sad add product.");
         }
 
