@@ -20,8 +20,18 @@ exports.productNameToProductId = {
 
 
 exports.bodyToKey = {
-    'arm': 'arm',
-    'leg': 'leg',
+    'eye': 'eye',
+    'eyes': 'eye',
+    'eye balls': 'eye',
+    'mouth': 'resp',
+    'face': 'resp',
+    'nose': 'resp',
+    'hand': 'hands',
+    'hands': 'hands',
+    'arm': 'hands',
+    'body': 'body',
+    'skin': 'body',
+    'feet': 'body',
 };
 
 exports.bodyToExposeKey = {
