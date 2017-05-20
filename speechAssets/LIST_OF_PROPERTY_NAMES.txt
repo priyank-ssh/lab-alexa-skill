@@ -3,6 +3,7 @@ molecular weight
 boiling point
 melting point
 flash point
+flashpoint
 vapor pressure
 density
 p h

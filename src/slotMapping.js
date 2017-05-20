@@ -45,6 +45,7 @@ exports.propertyToKey = {
     'boiling point': 'boiling_point',
     'melting point': 'melting_point',
     'flash point': 'flash_point',
+    'flashpoint': 'flash_point',
     'vapor pressure': 'vapor_pressure',
     'density': 'density',
     'p h': 'ph',  // "p h" is probably how alexa comprehends PH
@@ -62,5 +63,6 @@ exports.productToProtocol = {
     'dichlorophene': protocol.dichlorophene,
     'chloromethyl methyl sulfide': protocol.chloromethylMethylSulfide,
     'phenyl cyanate solution': protocol.phenylCyanateSolution,
-    'hydrogen bromide': protocol.hydrogenBromide
+    'hydrogen bromide': protocol.hydrogenBromide,
+    'benzoic acid': protocol.abeiticAcid,  // for demo
 };
