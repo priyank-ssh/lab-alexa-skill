@@ -31,14 +31,13 @@ const handlers = {
     'LaunchRequest': function () {
         const speechOutput = "Welcome to Connected Lab";
         const reprompt = "hm";
-        this.attributes['launch'] = "true";
+        // this.attributes['launch'] = "true";
         this.emit(':ask', speechOutput, reprompt);
     },
     'PropertyLookupIntent': function () {
         const productName = this.event.request.intent.slots.productname.value;
         const propertyName = this.event.request.intent.slots.propertyname.value;
-        // const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
-        const respType = ':tell';
+        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
         console.log(`PropertyLookupIntent propertyName: ${propertyName}, productName: ${productName}, respType: ${respType}`);
 
         propertyIntent.getProductProperty(productName, propertyName, (err, resp) => {
@@ -48,8 +47,7 @@ const handlers = {
     'ProtectiveGearLookupIntent': function () {
         const bodyPart= this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
-        // const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
-        const respType = ':tell';
+        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
         console.log(`ProtectiveGearLookupIntent bodyPart: ${bodyPart}, productName: ${productName}, respType: ${respType}`);
 
 	    protectiveIntent.getProtective(productName , bodyPart , (err, resp) => {
