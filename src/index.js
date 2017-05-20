@@ -36,12 +36,18 @@ const handlers = {
     },
     'PropertyLookupIntent': function () {
         const productName = this.event.request.intent.slots.productname.value;
-        const propertyName = this.event.request.intent.slots.propertyname.value;
-        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
-        console.log(`PropertyLookupIntent propertyName: ${propertyName}, productName: ${productName}, respType: ${respType}`);
+        const propertyNameSlot = this.event.request.intent.slots.propertyname;
+        if (!propertyNameSlot) {
+            console.log(`PropertyLookupIntent productName: ${productName}`);
+            return propertyIntent.getAllProductProperties(productName, (err, resp) => {
+                this.emit(':tell', resp);
+            });
+        }
+        const propertyName = propertyNameSlot.value;
+        console.log(`PropertyLookupIntent propertyName: ${propertyName}, productName: ${productName}`);
 
         propertyIntent.getProductProperty(productName, propertyName, (err, resp) => {
-          this.emit(respType, resp);
+          this.emit(':tell', resp);
         });
     },
     'ProtectiveGearLookupIntent': function () {
@@ -50,9 +56,9 @@ const handlers = {
         const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
         console.log(`ProtectiveGearLookupIntent bodyPart: ${bodyPart}, productName: ${productName}, respType: ${respType}`);
 
-	    protectiveIntent.getProtective(productName , bodyPart , (err, resp) => {
+	      protectiveIntent.getProtective(productName , bodyPart , (err, resp) => {
           this.emit(respType, resp);
-            });
+        });
     },
     'HazardLookupIntent': function () {
         const bodyPart = this.event.request.intent.slots.bodypart.value;

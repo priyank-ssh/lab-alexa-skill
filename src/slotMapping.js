@@ -13,6 +13,7 @@ exports.productNameToProductId = {
     'benzoic acid': '242381',
     'been zork acid': '242381', // for demo
     'in zork acid': '242381', // for demo
+    'benzoate acid': '242381', // for demo
 };
 
 
@@ -69,4 +70,5 @@ exports.productToProtocol = {
     'benzoic acid': protocol.abeiticAcid,  // for demo
     'been zork acid': protocol.abeiticAcid,  // for demo
     'in zork acid': protocol.abeiticAcid,  // for demo
+    'benzoate acid': protocol.abeiticAcid,  // for demo
 };
