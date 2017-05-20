@@ -67,7 +67,7 @@ function getAllProductProperties(catalogNumber, callback){
                 // str = str.replace(" C"," degree celcius")
              }
              if(firstResult['phrasetext'] != 'No Data Available'){
-                 str = str + `${firstResult['phrasetext']}`;
+                 str = str + `Be cautious, ${firstResult['phrasetext']}`;
                 // str = str.replace(" C"," degree celcius")
              }
              //console.log(str);
