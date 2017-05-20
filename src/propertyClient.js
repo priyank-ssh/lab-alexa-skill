@@ -49,27 +49,26 @@ function getAllProductProperties(catalogNumber, callback){
              if(firstResult['melting_point'] != 'No Data Available'){
                  tmp = `melting point is ${firstResult['melting_point']}. `;
                  str =str + tmp.replace(" C"," degree celcius");
-
              }
              if(firstResult['boiling_point'] != 'No Data Available'){
                  tmp = `boiling point is ${firstResult['boiling_point']}. `;
                  str = str + tmp.replace(" C"," degree celcius");
-
              }
              if(firstResult['flash_point'] != 'No Data Available'){
                  str = `flash point is ${firstResult['flash_point']}. `;
                  str = str + tmp.replace(" C"," degree celcius");
-
              }
              if(firstResult['density'] != 'No Data Available'){
                  str = str + `density is ${firstResult['density']}. `;
                 // str = str.replace(" C"," degree celcius")
-
              }
              if(firstResult['molec_weight'] != 'No Data Available'){
                  str = str + `molecular weight is ${firstResult['molec_weight']}. `;
                 // str = str.replace(" C"," degree celcius")
-
+             }
+             if(firstResult['phrasetext'] != 'No Data Available'){
+                 str = str + `${firstResult['phrasetext']}`;
+                // str = str.replace(" C"," degree celcius")
              }
              //console.log(str);
              callback(null, str);
