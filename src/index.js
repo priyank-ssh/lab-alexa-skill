@@ -31,10 +31,12 @@ const handlers = {
     'LaunchRequest': function () {
         const speechOutput = "Welcome to Connected Lab. You can ask about product information, preventative measures, and safety protocols.";
         const reprompt = "hm";
+        console.log("Welcome Intent");
         // this.attributes['launch'] = "true";
         this.emit(':ask', speechOutput, reprompt);
     },
     'PropertyLookupIntent': function () {
+        console.log("Property Lookup Intent");
         const productName = this.event.request.intent.slots.productname.value;
         const propertyNameSlot = this.event.request.intent.slots.propertyname;
         if (!propertyNameSlot) {
