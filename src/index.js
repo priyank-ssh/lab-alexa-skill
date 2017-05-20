@@ -77,6 +77,11 @@ const handlers = {
     'AddProductIntent': function () {
         const productName = this.event.request.intent.slots.productname.value;
         console.log(`Adding product name ${productName}`);
+
+        if (productName === 'cake'){
+            this.emit(':ask', "I cannot. The cake is a lie!");
+        }
+
         let products = this.attributes['products'] || [];
 
         products.push(productName);
