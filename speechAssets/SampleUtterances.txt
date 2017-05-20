@@ -11,6 +11,8 @@ ProtectiveGearLookupIntent what do i need for my {bodypart} to work with {produc
 ProtectiveGearLookupIntent what gear do i need on my {bodypart} to work with {productname}
 ProtectiveGearLookupIntent i should wear protective gear on my {bodypart} when using {productname}
 
+PropertyLookupIntent tell me about the properties of {productname}
+PropertyLookupIntent tell me about {productname}
 PropertyLookupIntent what's the {propertyname} of {productname}
 PropertyLookupIntent about the {propertyname} of {productname}
 PropertyLookupIntent tell me the {propertyname} of {productname}

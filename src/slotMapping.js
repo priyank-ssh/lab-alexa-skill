@@ -7,12 +7,14 @@ exports.productNameToProductId = {
     'sodium phosphate':'342483',
     'trizma base': 'T1503',
     'triz': 'T1503',
+    'trips': 'T1503', // for demo
     'dichlorophene': '35992',
     'chloromethyl methyl sulfide': 'C54007',
     'phenyl cyanate solution': '744417',
     'benzoic acid': '242381',
     'been zork acid': '242381', // for demo
     'in zork acid': '242381', // for demo
+    'benzoate acid': '242381', // for demo
 };
 
 
@@ -62,6 +64,8 @@ exports.productToProtocol = {
     'abeitic acid': protocol.abeiticAcid,
     'sodium phosphate': protocol.sodiumPhosphate,
     'trizma base': protocol.trizmaBase,
+    'triz': protocol.trizmaBase, // for demo
+    'trips': protocol.trizmaBase, // for demo
     'dichlorophene': protocol.dichlorophene,
     'chloromethyl methyl sulfide': protocol.chloromethylMethylSulfide,
     'phenyl cyanate solution': protocol.phenylCyanateSolution,
@@ -69,4 +73,5 @@ exports.productToProtocol = {
     'benzoic acid': protocol.abeiticAcid,  // for demo
     'been zork acid': protocol.abeiticAcid,  // for demo
     'in zork acid': protocol.abeiticAcid,  // for demo
+    'benzoate acid': protocol.abeiticAcid,  // for demo
 };

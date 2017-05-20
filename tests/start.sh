@@ -4,6 +4,7 @@
 lambda-local -l ../src/index.js -h handler -e intents/LaunchRequest.js
 lambda-local -l ../src/index.js -h handler -e intents/ProtectiveGearLookupIntent.js
 lambda-local -l ../src/index.js -h handler -e intents/PropertyLookupIntent.js
+lambda-local -l ../src/index.js -h handler -e intents/PropertyLookupAllIntent.js
 lambda-local -l ../src/index.js -h handler -e intents/HazardLookupIntent.js
 lambda-local -l ../src/index.js -h handler -e intents/AddProductIntent.js
 lambda-local -l ../src/index.js -h handler -e intents/AddTwoProductIntent.js
