@@ -1,5 +1,6 @@
 'use strict';
 const Alexa = require('alexa-sdk');
+const utils = require('./utils');
 const protectiveIntent = require('./protectiveIntent');
 const protocolIntent = require('./protocolIntent');
 const propertyIntent = require('./propertyIntent');
@@ -29,31 +30,74 @@ exports.handler = function(event, context, callback) {
 const handlers = {
     'LaunchRequest': function () {
         const speechOutput = "Welcome to Connected Lab";
-        const reprompt = speechOutput;
+        const reprompt = "hm";
+        // this.attributes['launch'] = "true";
         this.emit(':ask', speechOutput, reprompt);
     },
     'PropertyLookupIntent': function () {
-        const propertyName = this.event.request.intent.slots.propertyname.value;
         const productName = this.event.request.intent.slots.productname.value;
+        const propertyName = this.event.request.intent.slots.propertyname.value;
+        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
+        console.log(`PropertyLookupIntent propertyName: ${propertyName}, productName: ${productName}, respType: ${respType}`);
 
         propertyIntent.getProductProperty(productName, propertyName, (err, resp) => {
-          this.emit(':tell', resp);
+          this.emit(respType, resp);
         });
     },
     'ProtectiveGearLookupIntent': function () {
         const bodyPart= this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
+        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
+        console.log(`ProtectiveGearLookupIntent bodyPart: ${bodyPart}, productName: ${productName}, respType: ${respType}`);
 
 	    protectiveIntent.getProtective(productName , bodyPart , (err, resp) => {
-          this.emit(':tell', resp);
+          this.emit(respType, resp);
             });
     },
     'HazardLookupIntent': function () {
-        const contact = this.event.request.intent.slots.contact.value;
+        const bodyPart = this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
-        const speechOutput = protocolIntent.getProtocol(productName, contact);
+        console.log(`HazardLookupIntent bodyPart: ${bodyPart}, productName: ${productName}`);
 
-        console.log(`hazard lookup intent. property name ${propertyName} and product name ${productName}`);
+        protocolIntent.getProtocol(productName, bodyPart, (err, resp) => {
+            const reprompt = "Would you like us to find the closest Hospital?";
+            const speechOutput = resp + " " + reprompt;
+            this.emit(':ask', resp, reprompt);
+        });
+
+    },
+    'AddProductIntent': function () {
+        const productName = this.event.request.intent.slots.productname.value;
+        console.log(`Adding product name ${productName}`);
+        let products = this.attributes['products'] || [];
+
+        products.push(productName);
+        this.attributes['products'] = utils.unique(products);
+        this.emit(':ask', "Added. " + productName);
+    },
+    'RemoveProductIntent': function () {
+        const productName = this.event.request.intent.slots.productname.value;
+        console.log(`Removing product name ${productName}`);
+        let products = this.attributes['products'] || [];
+
+        this.attributes['products'] = utils.pop(products, productName);;
+        this.emit(':ask', "Removing. " + productName);
+    },
+    'ListProductIntent': function () {
+        console.log(`List Intent`);
+
+        if (!this.attributes.products) {
+            this.emit(':ask', "No products selected. Please sad add product.");
+        }
+
+        this.emit(':ask', "You have. " + this.attributes['products'].join(", "));
+    },
+    'AMAZON.Yes': function () {
+        const speechOutput = "The closets hospital is: Mount Sinai Doctors - Brooklyn Heights Urgent Care";
+        this.emit(':tell', speechOutput);
+    },
+    'AMAZON.No': function () {
+        const speechOutput = "Best of luck.";
         this.emit(':tell', speechOutput);
     },
     'AMAZON.HelpIntent': function () {

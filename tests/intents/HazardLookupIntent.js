@@ -15,15 +15,15 @@ module.exports = {
     "requestId": "EdwRequestId.61eeb3f2-c0c7-4588-b573-29b7198d84e6",
     "timestamp": "2016-06-01T03:03:58Z",
     "intent": {
-      "name": "PropertyLookupIntent",
+      "name": "HazardLookupIntent",
       "slots": {
         "productname": {
           "name": "productname",
-          "value": "benzoic acid"
+          "value": "cocaine"
         },
-        "propertyname": {
-          "name": "propertyname",
-          "value": "flash point"
+        "bodypart": {
+          "name": "bodypart",
+          "value": "eyes"
         }
       }
     },

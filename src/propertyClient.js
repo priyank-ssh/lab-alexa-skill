@@ -19,7 +19,7 @@ var request = require('request');
                 console.log(str);
              }
              if (str === 'No Data Available') {
-                 str = "Sorry! I dont have any data available for this property";
+                 str = `There is no data available for that property.`;
              }
              callback(null, str);
          }

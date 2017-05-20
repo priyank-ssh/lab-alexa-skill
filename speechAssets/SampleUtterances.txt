@@ -3,6 +3,7 @@ LaunchRequest reset
 
 ProtectiveGearLookupIntent what should i wear when working with {productname}
 ProtectiveGearLookupIntent i'm working with {productname} what do i need to wear on my {bodypart}
+ProtectiveGearLookupIntent i'm working with {productname} what should i wear on my {bodypart}
 ProtectiveGearLookupIntent what should i wear on my {bodypart} when working with {productname}
 ProtectiveGearLookupIntent what i should wear on my {bodypart} when using {productname}
 ProtectiveGearLookupIntent how should i protect my {bodypart} when working with {productname}
@@ -26,3 +27,12 @@ HazardLookupIntent i dropped {productname} on my {bodypart} help
 HazardLookupIntent i exposed {productname} to {bodypart}
 HazardLookupIntent i exposed {productname} to me {bodypart}
 HazardLookupIntent i {bodypart} the {productname}
+
+AddProductIntent please add {productname}
+AddProductIntent add {productname}
+
+RemoveProductIntent please remove {productname}
+RemoveProductIntent remove {productname}
+
+ListProductIntent please list my products
+ListProductIntent what do i have in my list

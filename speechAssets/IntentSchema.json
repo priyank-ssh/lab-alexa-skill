@@ -40,6 +40,27 @@
         }
       ]
     },
+    {
+      "intent": "AddProductIntent",
+      "slots": [
+        {
+          "name": "productname",
+          "type": "LIST_OF_PRODUCT_NAMES"
+        }
+      ]
+    },
+    {
+      "intent": "RemoveProductIntent",
+      "slots": [
+        {
+          "name": "productname",
+          "type": "LIST_OF_PRODUCT_NAMES"
+        }
+      ]
+    },
+    {"intent": "ListProductIntent"},
+    {"intent": "AMAZON.Yes"},
+    {"intent": "AMAZON.No"},
     {"intent": "AMAZON.HelpIntent"},
     {"intent": "AMAZON.StopIntent"},
     {"intent": "AMAZON.CancelIntent"}

@@ -3,7 +3,8 @@ cocaine
 abeitic acid
 sodium phosphate
 trizma base
+triz
 dichlorophene
 chloromethyl methyl sulfide
 phenyl cyanate solution
-hydrogen bromide
+benzoic acid
