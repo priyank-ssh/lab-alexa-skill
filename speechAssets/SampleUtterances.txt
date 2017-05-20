@@ -31,11 +31,17 @@ HazardLookupIntent i exposed {productname} to {bodypart}
 HazardLookupIntent i exposed {productname} to me {bodypart}
 HazardLookupIntent i {bodypart} the {productname}
 
-AddProductIntent please add {productname}
+AddProductIntent I am running low on {productname}
+AddProductIntent Order more {productname}
+AddProductIntent Add {productname} to my list
+AddProductIntent Need more {productname}
 AddProductIntent add {productname}
 
-RemoveProductIntent please remove {productname}
+RemoveProductIntent remove {productname} from the list
 RemoveProductIntent remove {productname}
 
-ListProductIntent please list my products
+ListProductIntent list my products
+ListProductIntent list products
+ListProductIntent whats in my list
+ListProductIntent whats in my list of products
 ListProductIntent what do i have in my list

@@ -30,9 +30,10 @@ exports.handler = function(event, context, callback) {
 const handlers = {
     'LaunchRequest': function () {
         const speechOutput = "Welcome to Connected Lab. You can ask about product information, preventative measures, and safety protocols.";
-        const reprompt = "hm";
+        const reprompt = "Would you like to know more citizen?";
         console.log("Welcome Intent");
         // this.attributes['launch'] = "true";
+        this.attributes['context'] = "LaunchRequest";
         this.emit(':ask', speechOutput, reprompt);
     },
     'PropertyLookupIntent': function () {
@@ -66,7 +67,7 @@ const handlers = {
         const bodyPart = this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
         console.log(`HazardLookupIntent bodyPart: ${bodyPart}, productName: ${productName}`);
-
+        this.attributes['context'] = "HazardLookupIntent";
         protocolIntent.getProtocol(productName, bodyPart, (err, resp) => {
             const reprompt = "Would you like us to find the closest Hospital?";
             const speechOutput = resp + " " + reprompt;
@@ -88,17 +89,19 @@ const handlers = {
         console.log(`Removing product name ${productName}`);
         let products = this.attributes['products'] || [];
 
-        this.attributes['products'] = utils.pop(products, productName);
-        this.emit(':ask', "Removing. " + productName);
+        let value = utils.pop(products, productName);
+        this.attributes['products'] = products;
+        const speechOutput = value ? `Removing ${productName}` : `No ${productName} found.`;
+        this.emit(':ask', speechOutput, "Would you like to continue.");
     },
     'ListProductIntent': function () {
         console.log(`List Intent`);
 
         if (!this.attributes.products) {
-            return this.emit(':ask', "No products selected. Please sad add product.");
+            return this.emit(':ask', "No products selected. Please say, add product.");
         }
 
-        this.emit(':ask', "You have. " + this.attributes['products'].join(", "));
+        this.emit(':ask', "You marked the following as running low. " + this.attributes['products'].join(", "));
     },
     'AMAZON.YesIntent': function () {
         const speechOutput = "The closets hospital is: Mount Sinai Doctors - Brooklyn Heights Urgent Care";
