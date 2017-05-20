@@ -35,8 +35,8 @@ const handlers = {
         this.emit(':ask', speechOutput, reprompt);
     },
     'PropertyLookupIntent': function () {
-        const propertyName = this.event.request.intent.slots.propertyname.value;
         const productName = this.event.request.intent.slots.productname.value;
+        const propertyName = this.event.request.intent.slots.propertyname.value;
         // const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
         const respType = ':tell';
         console.log(`PropertyLookupIntent propertyName: ${propertyName}, productName: ${productName}, respType: ${respType}`);
