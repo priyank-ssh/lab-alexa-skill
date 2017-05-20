@@ -4,6 +4,7 @@ abeitic acid
 sodium phosphate
 trizma base
 triz
+trizma
 dichlorophene
 chloromethyl methyl sulfide
 phenyl cyanate solution
