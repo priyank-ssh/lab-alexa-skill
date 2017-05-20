@@ -20,9 +20,9 @@ exports.productNameToProductId = {
 
 
 exports.bodyToKey = {
-    'eye': 'eye',
-    'eyes': 'eye',
-    'eye balls': 'eye',
+    'eye': 'eyes',
+    'eyes': 'eyes',
+    'eye balls': 'eyes',
     'mouth': 'resp',
     'face': 'resp',
     'nose': 'resp',
