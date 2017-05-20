@@ -56,11 +56,10 @@ const handlers = {
     'ProtectiveGearLookupIntent': function () {
         const bodyPart= this.event.request.intent.slots.bodypart.value;
         const productName = this.event.request.intent.slots.productname.value;
-        const respType = Object.keys(this.attributes).length ? ':ask' : ':tell';
-        console.log(`ProtectiveGearLookupIntent bodyPart: ${bodyPart}, productName: ${productName}, respType: ${respType}`);
+        console.log(`ProtectiveGearLookupIntent bodyPart: ${bodyPart}, productName: ${productName}`);
 
-	      protectiveIntent.getProtective(productName , bodyPart , (err, resp) => {
-          this.emit(respType, resp);
+	      protectiveIntent.getProtective(productName, bodyPart, (err, resp) => {
+          this.emit(':tell', resp);
         });
     },
     'HazardLookupIntent': function () {
