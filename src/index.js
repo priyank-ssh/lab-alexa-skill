@@ -15,7 +15,7 @@ const APP_ID = 'amzn1.ask.skill.3fdf9436-7341-4264-9ae2-fa517c6cd13f';
 
 const HELP_MESSAGE = "You can say tell me a space fact, or, you can say exit... What can I help you with?";
 const HELP_REPROMPT = "What can I help you with?";
-const STOP_MESSAGE = "Thank you for being safe! Goodbye!";
+const STOP_MESSAGE = "Thank you for using Connected Lab. Your current experiment’s progress will continue to be monitored.";
 
 //=========================================================================================================================================
 //Editing anything below this line might break your skill.
@@ -29,7 +29,7 @@ exports.handler = function(event, context, callback) {
 
 const handlers = {
     'LaunchRequest': function () {
-        const speechOutput = "Welcome to Connected Lab";
+        const speechOutput = "Welcome to Connected Lab. You can ask about product information, preventative measures, and safety protocols.";
         const reprompt = "hm";
         // this.attributes['launch'] = "true";
         this.emit(':ask', speechOutput, reprompt);
