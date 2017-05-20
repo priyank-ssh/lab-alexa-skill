@@ -104,7 +104,7 @@ const handlers = {
         this.emit(':ask', "You marked the following as running low. " + this.attributes['products'].join(", "));
     },
     'AMAZON.YesIntent': function () {
-        const speechOutput = "The closets hospital is: Mount Sinai Doctors - Brooklyn Heights Urgent Care";
+        const speechOutput = "The closest hospital is: Mount Sinai Doctors - Brooklyn Heights Urgent Care";
         this.emit(':tell', speechOutput);
     },
     'AMAZON.NoIntent': function () {
