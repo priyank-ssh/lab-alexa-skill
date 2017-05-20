@@ -6,6 +6,8 @@ module.exports = {
     },
       "attributes": {
           "products": [
+              "water",
+              "cocaine",
               "benzoic acid"
           ],
       },
@@ -23,7 +25,7 @@ module.exports = {
       "slots": {
         "productname": {
           "name": "productname",
-          "value": "benzoic acid"
+          "value": "water"
         }
       }
     },

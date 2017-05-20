@@ -13,7 +13,8 @@ function unique(arr) {
 function pop(arr, value) {
     const index = arr.indexOf(value);
     if (index > -1) {
-        return arr.pop(index)
+        arr.splice(index, 1);
+        return value
     }
     return null;
 }
