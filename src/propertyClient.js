@@ -66,7 +66,7 @@ function getAllProductProperties(catalogNumber, callback){
                  str = str + `molecular weight is ${firstResult['molec_weight']}. `;
                 // str = str.replace(" C"," degree celcius")
              }
-             if(firstResult['phrasetext'] != 'No Data Available'){
+             if('phrasetext' in firstResult && firstResult['phrasetext'] != 'No Data Available'){
                  str = str + `Be cautious, ${firstResult['phrasetext']}`;
                 // str = str.replace(" C"," degree celcius")
              }
