@@ -12,6 +12,7 @@ lambda-local -l ../src/index.js -h handler -e intents/RemoveProductIntent.js
 lambda-local -l ../src/index.js -h handler -e intents/ListProductIntent.js
 lambda-local -l ../src/index.js -h handler -e intents/ListNullProductIntent.js
 lambda-local -l ../src/index.js -h handler -e intents/YesIntent.js
+lambda-local -l ../src/index.js -h handler -e intents/EggIntent.js
 
 # lambda-local -l ../src/index.js -h handler -e events/help.js
 # lambda-local -l ../src/index.js -h handler -e events/stop.js

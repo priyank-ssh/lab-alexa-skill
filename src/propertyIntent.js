@@ -10,7 +10,7 @@ const marvelMetals = [
 
 function getProductProperty(product, property, callback) {
     if (marvelMetals.indexOf(product) >= 0) {
-        return speakNerd(product);
+        return speakNerd(product, callback);
     }
     const productID = slotMapping.productNameToProductId[product];
     const propertyKey = slotMapping.propertyToKey[property];
@@ -25,7 +25,7 @@ function getAllProductProperties(product, callback) {
 }
 
 
-function speakNerd(product) {
+function speakNerd(product, callback) {
     let speechOutput = "Face front, true believer"
     switch (product)
     {
@@ -42,7 +42,7 @@ function speakNerd(product) {
         default:
             break;
     }
-    callback(null, '');
+    callback(null, speechOutput);
 }
 
 
