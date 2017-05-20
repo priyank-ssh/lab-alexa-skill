@@ -92,11 +92,11 @@ const handlers = {
 
         this.emit(':ask', "You have. " + this.attributes['products'].join(", "));
     },
-    'AMAZON.Yes': function () {
+    'AMAZON.YesIntent': function () {
         const speechOutput = "The closets hospital is: Mount Sinai Doctors - Brooklyn Heights Urgent Care";
         this.emit(':tell', speechOutput);
     },
-    'AMAZON.No': function () {
+    'AMAZON.NoIntent': function () {
         const speechOutput = "Best of luck.";
         this.emit(':tell', speechOutput);
     },
