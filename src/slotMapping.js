@@ -6,6 +6,7 @@ exports.productNameToProductId = {
     'abeitic acid': '00010',
     'sodium phosphate':'342483',
     'trizma base': 'T1503',
+    'trizma': 'T1503',
     'triz': 'T1503',
     'trips': 'T1503', // for demo
     'dichlorophene': '35992',
@@ -64,6 +65,7 @@ exports.productToProtocol = {
     'abeitic acid': protocol.abeiticAcid,
     'sodium phosphate': protocol.sodiumPhosphate,
     'trizma base': protocol.trizmaBase,
+    'trizma': protocol.trizmaBase, // for demo
     'triz': protocol.trizmaBase, // for demo
     'trips': protocol.trizmaBase, // for demo
     'dichlorophene': protocol.dichlorophene,
