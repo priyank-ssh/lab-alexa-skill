@@ -12,6 +12,7 @@ ProtectiveGearLookupIntent i should wear protective gear on my {bodypart} when u
 
 PropertyLookupIntent tell me about the properties of {productname}
 PropertyLookupIntent tell me about {productname}
+PropertyLookupIntent what are the properties of {productname}
 PropertyLookupIntent what's the {propertyname} of {productname}
 PropertyLookupIntent about the {propertyname} of {productname}
 PropertyLookupIntent tell me the {propertyname} of {productname}

@@ -14,8 +14,4 @@ configure cli tool and get creds from your admin
 # AWS PERMISSIONS
 
 AWSLambdaFullAccess
-CloudWatchFullAccess
-AWSLambdaDynamoDBExecutionRole
-AWSLambdaBasicExecutionRole
-AWSLambdaInvocation-DynamoDB
 AWSCodeDeployDeployerAccess
